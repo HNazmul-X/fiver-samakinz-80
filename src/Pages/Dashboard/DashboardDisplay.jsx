@@ -1,4 +1,4 @@
-import { faDatabase, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import MediaObject from "../../Components/MediaObject/MediaObjec";
