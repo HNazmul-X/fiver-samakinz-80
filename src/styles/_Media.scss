@@ -1,0 +1,63 @@
+#dashboard_Display_page{
+    div, section, main{
+        animation: fade-up 0.4s linear;
+    }
+
+    .bnb-currency-board{
+        .logo{
+            width:100px;
+            margin: auto;
+            display: block;
+        }
+        .currency{
+            h1{
+                font-size:50px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#tracking-board{
+    div, section, main,table, tr{
+        animation: fade-up 0.4s linear;
+    }
+
+    .transiction-history{
+        .data-table{
+            border:1px solid rgba(131, 131, 131, 0.329);
+            width:100%;
+            overflow-x: auto;
+            border-radius: 20px;;
+            table{
+                color:var(--text-color);
+                margin-bottom: 0;
+                width:993px;
+                tr{
+                    th{
+                        padding:20px;
+                    }
+                    td{
+                        padding:10px 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fade-up {
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    50%{
+        opacity: 0.4;
+        transform: translate(0);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
