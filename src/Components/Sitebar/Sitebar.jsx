@@ -3,9 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Sitebar = () => {
+const Sitebar = ({ isMblSitebarOpen, setIsMblSitebarOpen }) => {
+    window.onclick = () => {
+        if(isMblSitebarOpen){
+            setIsMblSitebarOpen("")
+        }
+    }
+
     return (
-        <section id="Dashboard-sitebar">
+        <section id="Dashboard-sitebar" className={isMblSitebarOpen}>
             <ul className="p-0">
                 <li>
                     <NavLink activeClassName="sitebar-nav-active" className="sitebar-nav" exact to="/">
@@ -25,7 +31,6 @@ const Sitebar = () => {
                 </li>
             </ul>
         </section>
-        
     );
 };
 

@@ -15,7 +15,7 @@ body * {
   -ms-flex-flow: wrap;
       flex-flow: wrap;
   height: 100vh;
-  background: black;
+  background: var(--whole-backgound);
 }
 
 #Deashboard-Cover.black-theme {
@@ -24,6 +24,16 @@ body * {
   --background1: rgb(119, 0, 255);
   --overlay-background: rgba(255, 255, 255, 0.671);
   --border-color: rgba(255, 255, 255, 0.39);
+  --whole-backgound:#000000;
+}
+
+#Deashboard-Cover.light-theme {
+  --sitebar-color: #3838384b;
+  --text-color: rgb(40, 49, 54);
+  --background1: rgb(119, 0, 255);
+  --overlay-background: rgba(255, 255, 255, 0.671);
+  --border-color: rgba(255, 255, 255, 0.39);
+  --whole-backgound:#d3e2e6;
 }
 
 #Deashboard-Cover #Dashboard-sitebar {
@@ -88,6 +98,25 @@ body * {
   min-height: 30px;
 }
 
+@media screen and (max-width: 769px) {
+  #Deashboard-Cover #Dashboard-sitebar {
+    position: fixed;
+    height: 100%;
+    width: 270px;
+    z-index: 100;
+    background: var(--whole-backgound);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    padding-top: 20px;
+    -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  #Deashboard-Cover #Dashboard-sitebar.sitebar-opened {
+    -webkit-transform: translate(0px);
+            transform: translate(0px);
+  }
+}
+
 #Deashboard-Cover #Dashboard-Display {
   background: var(--display-bg);
   width: 77%;
@@ -95,6 +124,13 @@ body * {
   overflow: hidden;
   overflow-y: auto;
   padding: 30px;
+}
+
+@media screen and (max-width: 679px) {
+  #Deashboard-Cover #Dashboard-Display {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
 #Deashboard-Cover #Dashboard-Appbar {
@@ -111,6 +147,14 @@ body * {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-brand .logo {
+  display: block;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-brand .bar-icon {
+  display: none;
 }
 
 #Deashboard-Cover #Dashboard-Appbar .navbar-searchbar {
@@ -180,8 +224,21 @@ body * {
 }
 
 #Deashboard-Cover #Dashboard-Appbar .navbar-content .icon {
-  color: var(--text-color);
+  color: var(--whole-backgound);
   font-size: 20px;
+}
+
+@media screen and (max-width: 679px) {
+  #Deashboard-Cover #Dashboard-Appbar .navbar-brand .logo {
+    display: none;
+  }
+  #Deashboard-Cover #Dashboard-Appbar .navbar-brand .bar-icon {
+    margin-left: 20px;
+    display: block;
+  }
+  #Deashboard-Cover #Dashboard-Appbar .navbar-searchbar {
+    width: 200px;
+  }
 }
 
 h1,
@@ -276,5 +333,9 @@ a {
 
 .dark-highlight {
   background: var(--sitebar-color);
+}
+
+.infocard___2 *, .infocard___1 *, .infocard___5 * {
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

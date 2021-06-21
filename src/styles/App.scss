@@ -9,17 +9,27 @@ body {
 }
 
 #Deashboard-Cover {
-    display: flex;
-    flex-flow: wrap;
-    height: 100vh;
-    background: rgb(0, 0, 0);
-    &.black-theme {
+     &.black-theme {
         --sitebar-color: #3838384b;
         --text-color: rgb(209, 209, 209);
         --background1: rgb(119, 0, 255);
         --overlay-background: rgba(255, 255, 255, 0.671);
         --border-color: rgba(255, 255, 255, 0.39);
+        --whole-backgound:#000000;
     }
+    &.light-theme {
+        --sitebar-color: #3838384b;
+        --text-color: rgb(40, 49, 54);
+        --background1: rgb(119, 0, 255);
+        --overlay-background: rgba(255, 255, 255, 0.671);
+        --border-color: rgba(255, 255, 255, 0.39);
+        --whole-backgound:#d3e2e6;
+    }
+    display: flex;
+    flex-flow: wrap;
+    height: 100vh;
+    background: var(--whole-backgound);
+   
 
     #Dashboard-sitebar {
         background: var(--sitebar-color);
@@ -73,6 +83,21 @@ body {
                 min-height: 30px;
             }
         }
+        @media screen and (max-width:769px) {
+            position: fixed;
+            height:100%;
+            width:270px;
+            z-index: 100;
+            background: var(--whole-backgound);
+            transform: translateX(-100%);
+            padding-top: 20px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &.sitebar-opened{
+                transform: translate(0px);
+            }
+            
+        }
     }
 
     #Dashboard-Display {
@@ -82,6 +107,11 @@ body {
         overflow: hidden;
         overflow-y: auto;
         padding: 30px;
+
+        @media screen and (max-width:679px) {
+            width: 100%;
+            padding:10px;
+        }
     }
 
     #Dashboard-Appbar {
@@ -92,6 +122,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .navbar-brand{
+                .logo{
+                    display: block;
+                }
+                .bar-icon{
+                    display: none;
+                }
+            }
 
         .navbar-searchbar {
             width: 400px;
@@ -132,10 +170,26 @@ body {
             border-radius: 50%;
             background:var(--background1);
             .icon{
-                color:var(--text-color);
+                color:var(--whole-backgound);
                 font-size: 20px;
 
                 
+            }
+        }
+
+        @media screen and (max-width:679px) {
+            .navbar-brand{
+                .logo{
+                    display: none;
+                }
+                .bar-icon{
+                    margin-left: 20px;
+                    display: block;
+                }
+            }
+
+            .navbar-searchbar{
+                width:200px;
             }
         }
     }
@@ -156,4 +210,13 @@ a {
 
 .dark-highlight {
     background: var(--sitebar-color);
+}
+
+.infocard___{
+    &2, &1, &5 {
+        *{
+
+            color:white;
+        }
+    }
 }

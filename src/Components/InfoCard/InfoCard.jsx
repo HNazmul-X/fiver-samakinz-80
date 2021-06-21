@@ -15,7 +15,7 @@ const InfoCard = ({ info, index }) => {
             h2 {
             }
             h3 {
-                color: dimgray;
+                color: inherit;
                 font-weight: 450;
                 font-size: 22px;
             }
