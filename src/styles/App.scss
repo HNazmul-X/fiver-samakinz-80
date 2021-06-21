@@ -13,16 +13,18 @@ body {
     flex-flow: wrap;
     height: 100vh;
     background: rgb(0, 0, 0);
-    --sitebar-color: #3838384b;
-    --text-color: rgb(209, 209, 209);
-    --background1: rgb(119, 0, 255);
-    --overlay-background: rgba(255, 255, 255, 0.671);
-    --border-color: rgba(255, 255, 255, 0.39);
+    &.black-theme {
+        --sitebar-color: #3838384b;
+        --text-color: rgb(209, 209, 209);
+        --background1: rgb(119, 0, 255);
+        --overlay-background: rgba(255, 255, 255, 0.671);
+        --border-color: rgba(255, 255, 255, 0.39);
+    }
 
     #Dashboard-sitebar {
         background: var(--sitebar-color);
         width: 23%;
-        height: 90%;
+        height: 100%;
         overflow: hidden;
         overflow-y: auto;
         resize: horizontal;
@@ -87,11 +89,54 @@ body {
         min-height: 10%;
         background: var(--sitebar-color);
         border-bottom: var(--border-color) 2px solid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        .appbar-area {
-            width: 100%;
-            background: #1f1f24;
-            padding: 20px;
+        .navbar-searchbar {
+            width: 400px;
+
+            * {
+                background: var(--sitebar-color) !important;
+                border: none;
+                &:focus {
+                    box-shadow: none;
+                    border: none;
+                }
+            }
+            .input-group {
+                width: 100%;
+                border-radius: 20px;
+                overflow: hidden;
+                &.focused {
+                    border: 3px solid var(--background1) !important;
+                }
+                #basic-addon1 {
+                    color: var(--text-color);
+                }
+                input {
+                    color: var(--text-color) !important;
+                    font-weight: bold;
+                    &::placeholder {
+                        color: grey;
+                    }
+                }
+            }
+        }
+        .navbar-content{
+            width:40px;
+            height:40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background:var(--background1);
+            .icon{
+                color:var(--text-color);
+                font-size: 20px;
+
+                
+            }
         }
     }
 }

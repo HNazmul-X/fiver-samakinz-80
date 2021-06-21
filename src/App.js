@@ -8,10 +8,10 @@ import './styles/App.css';
 function App() {
   return (
       <BrowserRouter>
-          <section id="Deashboard-Cover">
-            <MyAppbar/>
-            <Sitebar/>
-            <Display/>
+          <section id="Deashboard-Cover" className="black-theme">
+              <MyAppbar />
+              <Sitebar />
+              <Display />
           </section>
       </BrowserRouter>
   );

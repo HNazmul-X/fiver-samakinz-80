@@ -16,6 +16,9 @@ body * {
       flex-flow: wrap;
   height: 100vh;
   background: black;
+}
+
+#Deashboard-Cover.black-theme {
   --sitebar-color: #3838384b;
   --text-color: rgb(209, 209, 209);
   --background1: rgb(119, 0, 255);
@@ -26,7 +29,7 @@ body * {
 #Deashboard-Cover #Dashboard-sitebar {
   background: var(--sitebar-color);
   width: 23%;
-  height: 90%;
+  height: 100%;
   overflow: hidden;
   overflow-y: auto;
   resize: horizontal;
@@ -99,12 +102,86 @@ body * {
   min-height: 10%;
   background: var(--sitebar-color);
   border-bottom: var(--border-color) 2px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#Deashboard-Cover #Dashboard-Appbar .appbar-area {
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar {
+  width: 400px;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar * {
+  background: var(--sitebar-color) !important;
+  border: none;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar *:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group {
   width: 100%;
-  background: #1f1f24;
-  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group.focused {
+  border: 3px solid var(--background1) !important;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group #basic-addon1 {
+  color: var(--text-color);
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group input {
+  color: var(--text-color) !important;
+  font-weight: bold;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group input::-webkit-input-placeholder {
+  color: grey;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group input:-ms-input-placeholder {
+  color: grey;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group input::-ms-input-placeholder {
+  color: grey;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-searchbar .input-group input::placeholder {
+  color: grey;
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-content {
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background: var(--background1);
+}
+
+#Deashboard-Cover #Dashboard-Appbar .navbar-content .icon {
+  color: var(--text-color);
+  font-size: 20px;
 }
 
 h1,
